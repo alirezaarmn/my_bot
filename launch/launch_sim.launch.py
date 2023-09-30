@@ -43,7 +43,11 @@ def generate_launch_description():
                                    '-entity', 'my_bot'],
                         output='screen')
 
-
+    publish_cmd_vel = Node(
+        package='my_bot',
+        executable='my_bot_node',
+        output='screen'
+    )
 
     # Launch them all!
     return LaunchDescription([
@@ -51,4 +55,5 @@ def generate_launch_description():
         gazebo,
         rviz,
         spawn_entity,
+        publish_cmd_vel,
     ])
