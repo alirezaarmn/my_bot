@@ -24,6 +24,12 @@ def generate_launch_description():
                     get_package_share_directory(package_name),'launch','rsp.launch.py'
                 )]), launch_arguments={'use_sim_time': 'true'}.items()
     )
+    
+    rviz = Node(
+        package='rviz2',
+        executable='rviz2',
+        output='screen'
+    )
 
     # Include the Gazebo launch file, provided by the gazebo_ros package
     gazebo = IncludeLaunchDescription(
@@ -43,5 +49,6 @@ def generate_launch_description():
     return LaunchDescription([
         rsp,
         gazebo,
+        rviz,
         spawn_entity,
     ])

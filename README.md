@@ -12,3 +12,13 @@ colcon build --symlink-install
 ```
 ros2 launch my_bot launch_sim.launch.py
 ```
+
+you can publish topic like this
+```
+ros2 topic pub --once /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"
+```
+
+manipolation with joint and tf
+```
+ros2 run joint_state_publisher_gui joint_state_publisher_gui
+```
